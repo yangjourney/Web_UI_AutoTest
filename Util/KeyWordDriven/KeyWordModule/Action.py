@@ -18,8 +18,9 @@ def open_browser(browsername='chrome',*args):
             driver.maximize_window()
         elif browsername.lower()=='chrome':
             option=webdriver.ChromeOptions()
-            option.add_argument('headless')
-            driver=webdriver.Chrome(executable_path=chromeDriverFilePath,chrome_options=option)
+            option.add_argument('--headless')
+            option.add_argument("--disable-infobars")
+            driver=webdriver.Chrome(executable_path=chromeDriverFilePath,chrome_options=option,desired_capabilities=None)
             #driver.maximize_window()
         elif browsername.lower()=='firefox':
             option=webdriver.FirefoxOptions()
