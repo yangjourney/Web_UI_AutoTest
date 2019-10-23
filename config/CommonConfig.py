@@ -16,8 +16,8 @@ test_result_path=os.path.join(project_path,'Report')
 
 #浏览器驱动路径
 ieDriverFilePath=""#暂时不用IE
-chromeDriverFilePath=os.path.join(project_path,'DataResourse','chromedriver')#电脑上的driver位置"C:\\Program Files (x86)\\Google\\Chrome\\Application\\chromedriver"
-firefoxDriverFilePath=""#暂时不用firefox
+chromeDriverFilePath=os.path.join(project_path,'DataResourse','chromedriver')#chromedriver,对应浏览器版本为78.0.3904.70
+firefoxDriverFilePath=os.path.join(project_path,'DataResourse','geckodriver')#geckodriver，对应浏览器版本为60+
 
 #关键字驱动
 #测试用例页面
