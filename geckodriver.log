@@ -1,0 +1,16 @@
+1515722557664	geckodriver	INFO	Listening on 127.0.0.1:60017
+1515722560681	geckodriver::marionette	INFO	Starting browser D:\Program Files\Mozilla Firefox\firefox.exe with args ["-marionette"]
+JavaScript error: resource://gre/components/SanityTest.js, line 284: NS_ERROR_FILE_ACCESS_DENIED: Component returned failure code: 0x80520015 (NS_ERROR_FILE_ACCESS_DENIED) [nsIPrefService.savePrefFile]
+1515722564643	Marionette	INFO	Listening on port 60032
+1515722565122	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: http://10.2.5.139:5000/lib/js/ext-all.js, line 22: unreachable code after return statement
+JavaScript warning: http://10.2.5.139:5000/lib/js/ext-all.js, line 22: unreachable code after return statement
+ return statement
+JavaScript warning: http://10.2.5.139:5000/lib/js/ext-all.js, line 22: unreachable code after return statement
+JavaScript error: http://cache.amap.com/lbs/static/addToolbar.js, line 6: ReferenceError: map is not defined
+JavaScript warning: http://10.2.5.139:5000/lib/js/ext-all.js, line 22: unreachable code after return statement
+JavaScript warning: http://10.2.5.139:5000/lib/js/ext-all.js, line 22: unreachable code after return statement
+JavaScript error: http://cache.amap.com/lbs/static/addToolbar.js, line 6: ReferenceError: map is not defined
+1512117340146	Marionette	INFO	New connections will no longer be accepted
+map is not defined
+1511766122059	Marionette	INFO	New connections will no longer be accepted

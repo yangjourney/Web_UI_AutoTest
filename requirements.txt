@@ -1,0 +1,9 @@
+xlrd
+pywin32
+#pyHook安装说明：运行system32下的cmd.exe（点击win，在搜索栏中输入cmd，在结果中选择以管理员身份运行，然后在命令行中输入：pip install pyHook路径即可）
+pyHook
+selenium
+pyperclip
+PyUserInput
+
+
