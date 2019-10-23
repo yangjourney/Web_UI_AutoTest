@@ -15,7 +15,7 @@ keyword_excel_path=os.path.join(project_path,'Tests\\KeyWordDricenTests',u"关�
 test_result_path=os.path.join(project_path,'Report')
 
 #浏览器驱动路径
-ieDriverFilePath=""#暂时不用IE
+ieDriverFilePath=os.path.join(project_path,'DataResourse','IEDriverServer')#chromedriver，对应浏览器版本为11
 chromeDriverFilePath=os.path.join(project_path,'DataResourse','chromedriver')#chromedriver,对应浏览器版本为78.0.3904.70
 firefoxDriverFilePath=os.path.join(project_path,'DataResourse','geckodriver')#geckodriver，对应浏览器版本为60+
 
