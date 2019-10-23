@@ -1,0 +1,5 @@
+2019-09-29 11:13:39,430 main.py[line: 64] INFO: Begin to UI Testing!
+2019-09-29 11:18:02,773 main.py[line: 70] INFO: Building Test Report Success!
+2019-09-29 11:18:02,775 main.py[line: 72] INFO: Ready to Sending Mail!
+2019-09-29 11:18:04,344 main.py[line: 79] INFO: Sending...
+2019-09-29 11:18:07,269 main.py[line: 82] INFO: Successful!
