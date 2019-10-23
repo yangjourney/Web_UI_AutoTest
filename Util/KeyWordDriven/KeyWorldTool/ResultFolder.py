@@ -7,7 +7,7 @@ from datetime import datetime
 def CreateRunFolder():
     try:
         time = datetime.now()
-        foldername = os.path.join(test_result_path, 'TestRun_' + time.strftime("%Y_%m_%d_%H_%M_%S"))
+        foldername = os.path.join(test_result_path, 'TestReport_' + time.strftime("%Y_%m_%d_%H_%M_%S"))
         if not os.path.exists(foldername):
             os.mkdir(foldername)
     except Exception as err:
