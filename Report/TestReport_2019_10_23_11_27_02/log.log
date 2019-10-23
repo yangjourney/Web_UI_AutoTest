@@ -1,0 +1,64 @@
+2019-10-23 11:27:02,411 - Control.py[line:19] - INFO: ******************************************************************
+2019-10-23 11:27:02,411 - Control.py[line:20] - INFO: ******************************关键字驱动的log**********************
+2019-10-23 11:27:02,411 - Control.py[line:21] - INFO: ******************************************************************
+2019-10-23 11:27:02,448 - Control.py[line:170] - INFO: getAllTestCase
+2019-10-23 11:27:02,449 - Control.py[line:170] - INFO: getCaseStep
+2019-10-23 11:27:02,449 - Control.py[line:170] - INFO: >>>>>>>>>>>>>>>用例(关键字驱动)：登陆3(正常登陆)开始执行>>>>>>>>>>>>>>>
+2019-10-23 11:27:02,450 - Control.py[line:170] - INFO: -->打开浏览器
+2019-10-23 11:27:03,049 - connectionpool.py[line:225] - DEBUG: Starting new HTTP connection (1): 127.0.0.1:55487
+2019-10-23 11:27:05,083 - connectionpool.py[line:437] - DEBUG: http://127.0.0.1:55487 "POST /session HTTP/1.1" 200 685
+2019-10-23 11:27:05,436 - Control.py[line:170] - INFO: -->访问
+2019-10-23 11:27:08,729 - connectionpool.py[line:437] - DEBUG: http://127.0.0.1:55487 "POST /session/64d33d16e7e0abeb8b026d77694ceca2/url HTTP/1.1" 200 14
+2019-10-23 11:27:08,995 - Control.py[line:170] - INFO: -->暂停2秒
+2019-10-23 11:27:11,167 - Control.py[line:170] - INFO: -->输入用户名
+2019-10-23 11:27:11,180 - connectionpool.py[line:437] - DEBUG: http://127.0.0.1:55487 "POST /session/64d33d16e7e0abeb8b026d77694ceca2/element HTTP/1.1" 200 88
+2019-10-23 11:27:11,200 - connectionpool.py[line:437] - DEBUG: http://127.0.0.1:55487 "POST /session/64d33d16e7e0abeb8b026d77694ceca2/element/0ece3e57-47aa-40b1-b813-a61734b41f2e/clear HTTP/1.1" 200 14
+2019-10-23 11:27:11,329 - connectionpool.py[line:437] - DEBUG: http://127.0.0.1:55487 "POST /session/64d33d16e7e0abeb8b026d77694ceca2/element/0ece3e57-47aa-40b1-b813-a61734b41f2e/value HTTP/1.1" 200 14
+2019-10-23 11:27:11,475 - Control.py[line:170] - INFO: -->输入密码
+2019-10-23 11:27:11,486 - connectionpool.py[line:437] - DEBUG: http://127.0.0.1:55487 "POST /session/64d33d16e7e0abeb8b026d77694ceca2/element HTTP/1.1" 200 88
+2019-10-23 11:27:11,506 - connectionpool.py[line:437] - DEBUG: http://127.0.0.1:55487 "POST /session/64d33d16e7e0abeb8b026d77694ceca2/element/82649c95-2943-4aa5-90b9-168c243220c5/clear HTTP/1.1" 200 14
+2019-10-23 11:27:11,592 - connectionpool.py[line:437] - DEBUG: http://127.0.0.1:55487 "POST /session/64d33d16e7e0abeb8b026d77694ceca2/element/82649c95-2943-4aa5-90b9-168c243220c5/value HTTP/1.1" 200 14
+2019-10-23 11:27:11,729 - Control.py[line:170] - INFO: -->输入验证码
+2019-10-23 11:27:11,755 - connectionpool.py[line:437] - DEBUG: http://127.0.0.1:55487 "POST /session/64d33d16e7e0abeb8b026d77694ceca2/element HTTP/1.1" 200 88
+2019-10-23 11:27:11,775 - connectionpool.py[line:437] - DEBUG: http://127.0.0.1:55487 "POST /session/64d33d16e7e0abeb8b026d77694ceca2/element/b5b6c546-35b4-4489-93a6-e5e28e6f2df7/clear HTTP/1.1" 200 14
+2019-10-23 11:27:11,827 - connectionpool.py[line:437] - DEBUG: http://127.0.0.1:55487 "POST /session/64d33d16e7e0abeb8b026d77694ceca2/element/b5b6c546-35b4-4489-93a6-e5e28e6f2df7/value HTTP/1.1" 200 14
+2019-10-23 11:27:11,976 - Control.py[line:170] - INFO: -->点击登录按钮
+2019-10-23 11:27:11,990 - connectionpool.py[line:437] - DEBUG: http://127.0.0.1:55487 "POST /session/64d33d16e7e0abeb8b026d77694ceca2/element HTTP/1.1" 200 88
+2019-10-23 11:27:12,033 - connectionpool.py[line:437] - DEBUG: http://127.0.0.1:55487 "POST /session/64d33d16e7e0abeb8b026d77694ceca2/element/c59bb7bb-f0fa-49e9-9ef1-3db2327c53c8/click HTTP/1.1" 200 14
+2019-10-23 11:27:12,190 - Control.py[line:170] - INFO: -->等待3秒，完成登录操作
+2019-10-23 11:27:15,473 - Control.py[line:170] - INFO: -->断言登录成功
+2019-10-23 11:27:15,494 - connectionpool.py[line:437] - DEBUG: http://127.0.0.1:55487 "GET /session/64d33d16e7e0abeb8b026d77694ceca2/source HTTP/1.1" 200 206845
+2019-10-23 11:27:15,639 - Control.py[line:170] - INFO: -->退出浏览器
+2019-10-23 11:27:15,651 - connectionpool.py[line:437] - DEBUG: http://127.0.0.1:55487 "DELETE /session/64d33d16e7e0abeb8b026d77694ceca2 HTTP/1.1" 200 14
+2019-10-23 11:27:17,920 - Control.py[line:170] - INFO: <<<<<<<<<<<<<<<用例(关键字驱动)：登陆3(正常登陆)执行完成<<<<<<<<<<<<<<<
+2019-10-23 11:27:18,072 - Control.py[line:170] - INFO: getCaseStep
+2019-10-23 11:27:18,073 - Control.py[line:170] - INFO: >>>>>>>>>>>>>>>用例(关键字驱动)：登陆4(异常登陆)开始执行>>>>>>>>>>>>>>>
+2019-10-23 11:27:18,075 - Control.py[line:170] - INFO: -->打开浏览器
+2019-10-23 11:27:18,665 - connectionpool.py[line:225] - DEBUG: Starting new HTTP connection (1): 127.0.0.1:55557
+2019-10-23 11:27:21,097 - connectionpool.py[line:437] - DEBUG: http://127.0.0.1:55557 "POST /session HTTP/1.1" 200 685
+2019-10-23 11:27:21,251 - Control.py[line:170] - INFO: -->访问
+2019-10-23 11:27:24,891 - connectionpool.py[line:437] - DEBUG: http://127.0.0.1:55557 "POST /session/84c266a4b7e12299dcfd0dd4dbef90e2/url HTTP/1.1" 200 14
+2019-10-23 11:27:25,063 - Control.py[line:170] - INFO: -->暂停2秒
+2019-10-23 11:27:27,259 - Control.py[line:170] - INFO: -->输入用户名
+2019-10-23 11:27:27,273 - connectionpool.py[line:437] - DEBUG: http://127.0.0.1:55557 "POST /session/84c266a4b7e12299dcfd0dd4dbef90e2/element HTTP/1.1" 200 88
+2019-10-23 11:27:27,295 - connectionpool.py[line:437] - DEBUG: http://127.0.0.1:55557 "POST /session/84c266a4b7e12299dcfd0dd4dbef90e2/element/7a54dc18-1a4d-4b55-ad58-58e7a1c05fa8/clear HTTP/1.1" 200 14
+2019-10-23 11:27:27,607 - connectionpool.py[line:437] - DEBUG: http://127.0.0.1:55557 "POST /session/84c266a4b7e12299dcfd0dd4dbef90e2/element/7a54dc18-1a4d-4b55-ad58-58e7a1c05fa8/value HTTP/1.1" 200 14
+2019-10-23 11:27:27,763 - Control.py[line:170] - INFO: -->输入密码
+2019-10-23 11:27:27,776 - connectionpool.py[line:437] - DEBUG: http://127.0.0.1:55557 "POST /session/84c266a4b7e12299dcfd0dd4dbef90e2/element HTTP/1.1" 200 88
+2019-10-23 11:27:27,795 - connectionpool.py[line:437] - DEBUG: http://127.0.0.1:55557 "POST /session/84c266a4b7e12299dcfd0dd4dbef90e2/element/4276f9ad-0b67-4b1e-83a0-03ebac0dc54a/clear HTTP/1.1" 200 14
+2019-10-23 11:27:27,870 - connectionpool.py[line:437] - DEBUG: http://127.0.0.1:55557 "POST /session/84c266a4b7e12299dcfd0dd4dbef90e2/element/4276f9ad-0b67-4b1e-83a0-03ebac0dc54a/value HTTP/1.1" 200 14
+2019-10-23 11:27:28,187 - Control.py[line:170] - INFO: -->输入验证码
+2019-10-23 11:27:28,201 - connectionpool.py[line:437] - DEBUG: http://127.0.0.1:55557 "POST /session/84c266a4b7e12299dcfd0dd4dbef90e2/element HTTP/1.1" 200 88
+2019-10-23 11:27:28,228 - connectionpool.py[line:437] - DEBUG: http://127.0.0.1:55557 "POST /session/84c266a4b7e12299dcfd0dd4dbef90e2/element/9a0f1322-2ca9-4dc3-aef9-4362a7031608/clear HTTP/1.1" 200 14
+2019-10-23 11:27:28,312 - connectionpool.py[line:437] - DEBUG: http://127.0.0.1:55557 "POST /session/84c266a4b7e12299dcfd0dd4dbef90e2/element/9a0f1322-2ca9-4dc3-aef9-4362a7031608/value HTTP/1.1" 200 14
+2019-10-23 11:27:28,532 - Control.py[line:170] - INFO: -->点击登录按钮
+2019-10-23 11:27:28,550 - connectionpool.py[line:437] - DEBUG: http://127.0.0.1:55557 "POST /session/84c266a4b7e12299dcfd0dd4dbef90e2/element HTTP/1.1" 200 88
+2019-10-23 11:27:28,614 - connectionpool.py[line:437] - DEBUG: http://127.0.0.1:55557 "POST /session/84c266a4b7e12299dcfd0dd4dbef90e2/element/2d6c812e-ec48-4e94-94a9-91ebd414e55f/click HTTP/1.1" 200 14
+2019-10-23 11:27:28,788 - Control.py[line:170] - INFO: -->等待3秒，完成登录操作
+2019-10-23 11:27:31,955 - Control.py[line:170] - INFO: -->断言登录成功
+2019-10-23 11:27:31,976 - connectionpool.py[line:437] - DEBUG: http://127.0.0.1:55557 "GET /session/84c266a4b7e12299dcfd0dd4dbef90e2/source HTTP/1.1" 200 206845
+2019-10-23 11:27:32,315 - connectionpool.py[line:437] - DEBUG: http://127.0.0.1:55557 "GET /session/84c266a4b7e12299dcfd0dd4dbef90e2/screenshot HTTP/1.1" 200 53596
+2019-10-23 11:27:32,338 - Action.py[line:160] - ERROR: assert_word  err=
+2019-10-23 11:27:32,590 - Control.py[line:174] - ERROR: 执行测试步骤:断言登录成功  error: 断言失败
+2019-10-23 11:27:32,604 - connectionpool.py[line:437] - DEBUG: http://127.0.0.1:55557 "DELETE /session/84c266a4b7e12299dcfd0dd4dbef90e2 HTTP/1.1" 200 14
+2019-10-23 11:27:34,708 - Control.py[line:170] - INFO: <<<<<<<<<<<<<<<用例(关键字驱动)：登陆4(异常登陆)执行完成<<<<<<<<<<<<<<<
