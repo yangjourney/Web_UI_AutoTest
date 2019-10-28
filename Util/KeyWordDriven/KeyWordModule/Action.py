@@ -4,6 +4,8 @@ from config.CommonConfig import *
 from Util.KeyWordDriven.KeyWorldTool.FormatTime import *
 from selenium.webdriver.support.ui import WebDriverWait
 from Util.KeyWordDriven.KeyWorldTool import ResultFolder
+from Util.KeyWordDriven.KeyWorldTool.Clipboard import *
+from Util.KeyWordDriven.KeyWorldTool.KeyBoardUtil import *
 import time
 import logging
 
@@ -217,3 +219,26 @@ def log_info(info):
 def log_error(info):
     logging.error(str(info))
     print(str(info))
+
+# 模拟ctrl+v键
+def ctrl_v(value):
+    try:
+        Clipboard.set_text(value)
+        time.sleep(2)
+        KeyBoardKeys.two_keys('ctrl', 'v')
+    except Exception as e:
+        raise e
+
+# 模拟tab键
+def tab_key():
+    try:
+        KeyBoardKeys.one_key('tab')
+    except Exception as e:
+        raise e
+
+# 模拟enter键
+def enter_key():
+    try:
+        KeyBoardKeys.one_key('enter')
+    except Exception as e:
+        raise e

@@ -13,4 +13,7 @@ assert_wholeurl='assert_wholeurl'
 assert_parturl='assert_parturl'
 input_select_click='input_select_click'
 out_frame='out_frame'
+ctrl_v='ctrl_v'
+tab_key='tab_key'
+enter_key='enter_key'
 

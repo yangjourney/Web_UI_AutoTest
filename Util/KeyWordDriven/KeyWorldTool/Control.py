@@ -163,6 +163,12 @@ class RunTests(object):
             Action.input_select_click(step.method, step.expression, step.value)
         elif step.keyword == out_frame:
             Action.out_frame()
+        elif step.keyword == ctrl_v:
+            Action.ctrl_v(step.value)
+        elif step.keyword == tab_key:
+            Action.tab_key()
+        elif step.keyword == enter_key:
+            Action.enter_key()
         else:
             self.log_info("非法关键字：" + step.keyword)
 
