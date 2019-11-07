@@ -65,7 +65,7 @@ if __name__ == '__main__':
     logger.info('Begin to UI Testing!')
     title = u'UI自动化测试报告'
     filename = BASE_DIR+"\\Report"+'\\' + now + 'UI_Result.html'
-    fp=open(filename, 'wb')
+    fp=open(filename, bool('wb'))
     runner = HTMLTestRunner(stream=fp, title=u'Test Report', description=u'Case Execution Details:')
     runner.run(discover)
     logger.info('Building Test Report Success!')
