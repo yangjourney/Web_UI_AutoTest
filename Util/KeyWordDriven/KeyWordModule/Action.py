@@ -32,7 +32,6 @@ def open_browser(browsername='chrome',*args):
         elif browsername.lower()=='edge':
             # 驱动下载地址
             # https://developer.microsoft.com/en-us/microsoft-edge/tools/webdriver/
-            driver=webdriver.Edge()
             driver=webdriver.Edge(executable_path=edgeDriverFilePath)
             driver.maximize_window()
     except Exception as e:
@@ -86,6 +85,7 @@ def click(locatormethod,locatorexpression,*args):
     log_info('click  ')
     global driver
     try:
+        #driver.implicitly_wait(10)
         element=getElement(driver,locatormethod,locatorexpression)
         element.click()
     except Exception as e:

@@ -18,7 +18,7 @@ test_result_path=os.path.join(project_path,'Report')
 ieDriverFilePath=os.path.join(project_path,'DataResourse','IEDriverServer')#chromedriver，对应IE浏览器版本为11
 chromeDriverFilePath=os.path.join(project_path,'DataResourse','chromedriver')#chromedriver,对应谷歌浏览器版本为78.0.3904.70
 firefoxDriverFilePath=os.path.join(project_path,'DataResourse','geckodriver')#geckodriver，对应火狐浏览器版本为60+
-edgeDriverFilePath=os.path.join(project_path,'DataResourse','msedgedriver')#msedgedriver，对应EDGE浏览器版本为79.0.309.14
+edgeDriverFilePath=os.path.join(project_path,'DataResourse','msedgedriver.exe')#msedgedriver，对应EDGE浏览器版本为79.0.309.14
 
 #关键字驱动
 #测试用例页面
@@ -47,3 +47,4 @@ if __name__=='__main__':
     print ('project_path='+project_path)
     print ('keyword_excel_path='+keyword_excel_path)
     print(test_result_path)
+    print(edgeDriverFilePath)
