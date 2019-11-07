@@ -39,6 +39,7 @@ class webutils(object):
         驱动下载地址：http://npm.taobao.org/mirrors/chromedriver/，根据本地chrome实际版本下载对应的chromedriver
         """
         # global driver
+        global driver
         if browser == "firefox" :
             driver = webdriver.Firefox(executable_path=BASE_DIR+'\\DataResourse\\geckodriver')
         elif browser == "chrome":
