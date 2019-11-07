@@ -29,6 +29,12 @@ def open_browser(browsername='chrome',*args):
             option.add_argument('--headless')
             driver=webdriver.Firefox(executable_path=firefoxDriverFilePath,firefox_options=option)
             #driver.maximize_window()
+        elif browsername.lower()=='edge':
+            # 驱动下载地址
+            # https://developer.microsoft.com/en-us/microsoft-edge/tools/webdriver/
+            driver=webdriver.Edge()
+            driver=webdriver.Edge(executable_path=edgeDriverFilePath)
+            driver.maximize_window()
     except Exception as e:
         logging.error('open_browser  err='+str(e))
         raise e

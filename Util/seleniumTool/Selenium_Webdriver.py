@@ -40,16 +40,18 @@ class webutils(object):
         """
         # global driver
         if browser == "firefox" :
-            driver = webdriver.Firefox()
+            driver = webdriver.Firefox(executable_path=BASE_DIR+'\\DataResourse\\geckodriver')
         elif browser == "chrome":
-            driver = webdriver.Chrome(BASE_DIR+'\\DataResourse\\chromedriver.exe')
+            driver = webdriver.Chrome(executable_path=BASE_DIR+'\\DataResourse\\chromedriver')
         elif browser == "ie" :
-            driver = webdriver.Ie()
+            driver = webdriver.Ie(executable_path=BASE_DIR+'\\DataResourse\\IEDriverServer')
+        elif browser == "edge":
+            driver = webdriver.Edge(executable_path=BASE_DIR+'\\DataResourse\\msedgedriver')
         try:
             self.driver = driver
         #    self.driver=getattr(webdriver,browser.capitalize())()
         except Exception:
-            raise NameError("Not found this browser,You can enter 'firefox', 'chrome', 'ie' .")
+            raise NameError("Not found this browser,You can enter 'firefox', 'chrome', 'ie', 'edge' .")
 
     def get(self, url):
         """
