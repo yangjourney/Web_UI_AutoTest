@@ -1,0 +1,11 @@
+2019-11-07 14:36:10,893 - Control.py[line:19] - INFO: ******************************************************************
+2019-11-07 14:36:10,894 - Control.py[line:20] - INFO: ******************************关键字驱动的log**********************
+2019-11-07 14:36:10,894 - Control.py[line:21] - INFO: ******************************************************************
+2019-11-07 14:36:10,977 - Control.py[line:176] - INFO: getAllTestCase
+2019-11-07 14:36:10,978 - Control.py[line:176] - INFO: getCaseStep
+2019-11-07 14:36:10,979 - Control.py[line:176] - INFO: >>>>>>>>>>>>>>>用例(关键字驱动)：登录0(使用有效账号登录0)开始执行>>>>>>>>>>>>>>>
+2019-11-07 14:36:10,979 - Control.py[line:176] - INFO: -->打开浏览器
+2019-11-07 14:36:10,981 - Action.py[line:43] - ERROR: open_browser  err=__init__() missing 1 required positional argument: 'executable_path'
+2019-11-07 14:36:11,402 - Control.py[line:180] - ERROR: 执行测试步骤:打开浏览器  error: __init__() missing 1 required positional argument: 'executable_path'
+2019-11-07 14:36:11,403 - Action.py[line:132] - ERROR: close_browser  err='NoneType' object has no attribute 'quit'
+2019-11-07 14:36:11,403 - Control.py[line:176] - INFO: 测试用例运行失败, 以下是错误信息: 'NoneType' object has no attribute 'quit'
