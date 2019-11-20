@@ -26,7 +26,8 @@ def open_browser(browsername='chrome',*args):
             #driver.maximize_window()
         elif browsername.lower()=='firefox':
             option=webdriver.FirefoxOptions()
-            option.add_argument('--headless')
+            option.add_argument('--disable-gpu')
+            option.add_argument("--no-sandbox")
             driver=webdriver.Firefox(executable_path=firefoxDriverFilePath,firefox_options=option)
             #driver.maximize_window()
         elif browsername.lower()=='edge':
