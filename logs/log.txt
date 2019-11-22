@@ -1,5 +1,0 @@
-2019-10-16 16:57:36,339 main.py[line: 65] INFO: Begin to UI Testing!
-2019-10-16 16:58:17,299 main.py[line: 71] INFO: Building Test Report Success!
-2019-10-16 16:58:17,302 main.py[line: 73] INFO: Ready to Sending Mail!
-2019-10-16 16:58:17,304 main.py[line: 77] INFO: Sending...
-2019-10-16 16:58:19,479 main.py[line: 79] INFO: Successful!
