@@ -10,10 +10,10 @@ project_path=os.path.dirname(os.path.dirname(__file__))
 
 #测试数据路径
 general_test_path=os.path.join(project_path,'Tests\\AutoUITests\\XiaoYuanDeliversVegetables')
-#keyword_excel_path=os.path.join(project_path,'Tests\\KeyWordDricenTests',u"关键字驱动测试用例.xlsx")
+keyword_excel_path=os.path.join(project_path,'Tests\\KeyWordDricenTests',u"关键字驱动测试用例.xlsx")
 
 #测试结果文件夹路径
-mail_config=os.path.join(project_path,'config',u"mail.config")
+mail_config=os.path.join(project_path,'config',u"mail.conf")
 log_config=os.path.join(project_path,'config',u"mlogconfig.yml")
 test_result_path=os.path.join(project_path,'Report')
 
@@ -50,4 +50,4 @@ if __name__=='__main__':
     print ('project_path='+project_path)
     #print ('keyword_excel_path='+keyword_excel_path)
     print(test_result_path)
-    print(general_test_path)
+    print(mail_config)

@@ -5,30 +5,32 @@ from email.mime.multipart import MIMEMultipart
 from email import encoders
 from email.mime.base import MIMEBase
 import win32com.client as win32
+from Util.normalTool.TestSuiteInit import *
 
-def SendMail_SMTP(mail_config_file,file):
+def SendMail_SMTP():
     # 第三方 SMTP 服务
     # 构造 MIMEMultipart 对象做为根容器
     config = configparser.ConfigParser()
-    config.read(mail_config_file)
+    config.read(mail_config)
     # 设置服务器
     mail_host = config.get('SMTP', 'host')
     # 构造一个MIMEMultipart对象代表邮件本身
     message= MIMEMultipart()
-    mail_content = 'Hi,Attachments Is Test Report,Please Refer .'
+    mail_content = '你好，这是自动化测试报告，请注意查收。'
     message.attach(MIMEText(mail_content, 'html', 'utf-8'))# 正文内容
     message['From'] =config.get('SMTP', 'from_addr')
-    message['To'] = ','.join(config.get('SMTP', 'to_addrs')) #收件人地址
+    message['To'] = config.get('SMTP', 'to_addrs') #收件人地址
 
     subject = 'AutoUI_TestReport-%s' % time.ctime()
     message['Subject'] = subject  #邮件标题
 
     #添加文件到附件
+    file = new_file()
     with open(file,'rb') as f:
         # MIMEBase表示附件的对象
-        mime = MIMEBase('text', 'txt', filename=file)
+        mime = MIMEBase('text', 'txt', filename='自动化测试报告')
         # filename是显示附件名字
-        mime.add_header('Content-Disposition', 'attachment', filename=file)
+        mime.add_header('Content-Disposition', 'attachment', filename='自动化测试报告')
         # 获取附件内容
         mime.set_payload(f.read())
         encoders.encode_base64(mime)
@@ -38,7 +40,7 @@ def SendMail_SMTP(mail_config_file,file):
     try:
         smtpObj = smtplib.SMTP_SSL(mail_host, 465)
         smtpObj.login(config.get('SMTP', 'from_addr'), config.get('SMTP', 'login_pwd'))
-        smtpObj.sendmail(config.get('SMTP', 'from_addr'), config.get('SMTP', 'to_addrs'), str(message))  #message.as_string()
+        smtpObj.sendmail(message['From'], message['To'], str(message))  #message.as_string()
         smtpObj.quit()
         print (u"邮件发送成功")
     except smtplib.SMTPException as e:

@@ -1,8 +1,12 @@
+#  -*- coding: utf-8 -*-
+
+from Util.HTMLTestRunner.HTMLTestRunner import HTMLTestRunner
+from Util.normalTool.sendmail import SendMail_SMTP
 from Util.normalTool.TestSuiteInit import *
+from config.CommonConfig import *
 
-# 执行用例
+# 4. 执行用例
 if __name__ == '__main__':
-
     discover = create_suite()
     print ('=====AutoTest Start======')
     now=time.strftime('%Y-%m-%d_%H_%M_%S_')
@@ -12,8 +16,6 @@ if __name__ == '__main__':
     runner = HTMLTestRunner(stream=fp, title=u'Test Report', description=u'Case Execution Details:')
     runner.run(discover)
     fp.close()
-    mail_content = 'Hi,Attachments Is Test Report,Please Refer .'
-    attachments = new_file()
-    #print (attachments)
-    #SendMail_SMTP(mail_config, attachments)
-    print ('=====AutoTest Finished======')
+    # 发送邮件
+    # SendMail_SMTP()
+    print ('=====AutoTest Over======')
