@@ -14,7 +14,7 @@ class RunTests(object):
     def __init__(self):
         CreateRunFolder()
 
-    def setUpKeyword(self,keyword_excel_path):
+    def setUpKeyword(self):
         CreateLoggerFile('log')
         logging.info('******************************************************************')
         logging.info('******************************关键字驱动的log**********************')
