@@ -6,6 +6,6 @@ from Util.KeyWordDriven.KeyWorldTool.Control import *
 
 if __name__ == "__main__":#这个类直接被运行的时候，以下的代码会被执行
     newrun = RunTests()
-    newrun.setUpKeyword()
+    newrun.setUpKeyword('D:\All_Projects\Web_UI_AutoTest\Tests\KeyWordDricenTests\关键字驱动测试用例.xlsx')
     #发送邮件：LoadAndRunTestCases_Keyword(1)，不发送邮件：LoadAndRunTestCases_Keyword(0)
     newrun.LoadAndRunTestCases_Keyword(0)
