@@ -9,9 +9,12 @@ file_path=os.path.dirname(__file__)
 project_path=os.path.dirname(os.path.dirname(__file__))
 
 #测试数据路径
-keyword_excel_path=os.path.join(project_path,'Tests\\KeyWordDricenTests',u"关键字驱动测试用例.xlsx")
+general_test_path=os.path.join(project_path,'Tests\\AutoUITests\\XiaoYuanDeliversVegetables')
+#keyword_excel_path=os.path.join(project_path,'Tests\\KeyWordDricenTests',u"关键字驱动测试用例.xlsx")
 
 #测试结果文件夹路径
+mail_config=os.path.join(project_path,'config',u"mail.config")
+log_config=os.path.join(project_path,'config',u"mlogconfig.yml")
 test_result_path=os.path.join(project_path,'Report')
 
 #浏览器驱动路径
@@ -45,6 +48,6 @@ step_err=8
 if __name__=='__main__':
     print ('file_path='+file_path)
     print ('project_path='+project_path)
-    print ('keyword_excel_path='+keyword_excel_path)
+    #print ('keyword_excel_path='+keyword_excel_path)
     print(test_result_path)
-    print(edgeDriverFilePath)
+    print(general_test_path)

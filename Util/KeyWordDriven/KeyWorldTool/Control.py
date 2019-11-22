@@ -14,7 +14,7 @@ class RunTests(object):
     def __init__(self):
         CreateRunFolder()
 
-    def setUpKeyword(self):
+    def setUpKeyword(self,keyword_excel_path):
         CreateLoggerFile('log')
         logging.info('******************************************************************')
         logging.info('******************************关键字驱动的log**********************')
@@ -27,6 +27,7 @@ class RunTests(object):
         self.case_file = case_file
 
     def LoadAndRunTestCases_Keyword(self,type):
+
         try:
             caseList = self.getAllTestCase_keyword()
             for case in caseList:

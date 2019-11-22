@@ -8,18 +8,15 @@ Author:
 CurrentFile = os.path.abspath(os.path.dirname(__file__))
 BASE_DIR=os.path.abspath(os.path.dirname(CurrentFile)+os.path.sep+".")
 """
-import xlrd
+import xlrd,datetime,time,pyperclip
 from pykeyboard import PyKeyboard
-import os, datetime
 from selenium import webdriver
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.common.by import By
-import time
-import pyperclip
+from config.CommonConfig import *
 from Util.ExcelUtil.ExcelUtil import getCellValue
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(os.path.dirname(os.path.abspath(__file__)))))
 
 class webutils(object):
     """
@@ -41,13 +38,13 @@ class webutils(object):
         # global driver
         global driver
         if browser == "firefox" :
-            driver = webdriver.Firefox(executable_path=BASE_DIR+'\\DataResourse\\geckodriver')
+            driver = webdriver.Firefox(firefoxDriverFilePath)
         elif browser == "chrome":
-            driver = webdriver.Chrome(executable_path=BASE_DIR+'\\DataResourse\\chromedriver')
+            driver = webdriver.Chrome(chromeDriverFilePath)
         elif browser == "ie" :
-            driver = webdriver.Ie(executable_path=BASE_DIR+'\\DataResourse\\IEDriverServer')
+            driver = webdriver.Ie(ieDriverFilePath)
         elif browser == "edge":
-            driver = webdriver.Edge(executable_path=BASE_DIR+'\\DataResourse\\msedgedriver')
+            driver = webdriver.Edge(edgeDriverFilePath)
         try:
             self.driver = driver
         #    self.driver=getattr(webdriver,browser.capitalize())()
@@ -339,7 +336,7 @@ class webutils(object):
         #BASE_DIR = os.path.dirname(os.path.abspath(os.path.dirname(os.path.abspath(__file__))))
         self.wait_element(element)
         self.find_element(element).click()
-        pyperclip.copy(BASE_DIR+"\\DataResourse\\img\\"+file)
+        pyperclip.copy(os.path.join(project_path,'DataResourse\\img\\'+file))
         time.sleep(2)
         k = PyKeyboard()
         #SendKeys(str(pyperclip.paste()))
@@ -370,7 +367,7 @@ def get_dic_xls_xpath(sheet, row, new_name):
     示例：
     self.autoDriver.click("xpath|.//span[contains(text(),'新增')]/parent::button") ====>self.autoDriver.click(get_dic_xls_xpath(1,21,'基础数据'))
     """
-    xls_path=BASE_DIR+'\\DataResourse\\WebDictionary.xls'
+    xls_path=os.path.join(project_path,'DataResourse','WebDictionary.xls')
     # noinspection PyBroadException
     try:
         #xls_xpath_split = unicode(getCellValue(sheet, row, 2, xls_path)).split("$") ---Python2[unicode],Python3[str]
@@ -393,7 +390,7 @@ def get_xls_data(sheet, row, col, date_type):
     self.autoDriver.send_keys("xpath|.//*[@for='code']/following-sibling::*//input",unicode(cropType,"utf-8")) ========>
     self.autoDriver.send_keys(get_dic_xls_xpath(1,21),get_xls_data(0,49,""))
     """
-    xls_path=BASE_DIR+'\\DataResourse\\TestDataDictionary.xls'
+    xls_path=os.path.join(project_path,'DataResourse','TestDataDictionary.xls')
     if date_type == "int":
         xls_data = int(getCellValue(sheet, row, col, xls_path))
     elif date_type == "data":

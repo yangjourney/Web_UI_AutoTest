@@ -3,7 +3,6 @@
 from config.CommonConfig import *
 from datetime import datetime
 
-
 def CreateRunFolder():
     try:
         time = datetime.now()
