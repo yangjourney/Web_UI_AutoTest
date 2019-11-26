@@ -6,6 +6,7 @@ from email import encoders
 from email.mime.base import MIMEBase
 import win32com.client as win32
 from Util.normalTool.TestSuiteInit import *
+from Util.KeyWordDriven.KeyWorldTool.EmailUtils import *
 
 def SendMail_SMTP():
     # 第三方 SMTP 服务
@@ -16,7 +17,7 @@ def SendMail_SMTP():
     mail_host = config.get('SMTP', 'host')
     # 构造一个MIMEMultipart对象代表邮件本身
     message= MIMEMultipart()
-    mail_content = '你好，这是自动化测试报告，请注意查收。'
+    mail_content = '你好，这是自动化测试报告，请注意查收。<br>'+getToday()
     message.attach(MIMEText(mail_content, 'html', 'utf-8'))# 正文内容
     message['From'] =config.get('SMTP', 'from_addr')
     message['To'] = config.get('SMTP', 'to_addrs') #收件人地址

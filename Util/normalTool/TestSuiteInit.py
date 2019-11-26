@@ -5,7 +5,7 @@ from config.CommonConfig import *
 
 # 1.产生测试套件
 def create_suite():
-    global discover, filename
+    #global discover, filename
     test_unit = unittest.TestSuite()
     # 使用discover找出用例文件夹下test_case的所有用例
     # 测试模块的顶层目录，即测试用例不是放在多级目录下，设置为none
