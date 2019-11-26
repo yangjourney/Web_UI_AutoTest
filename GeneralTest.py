@@ -5,7 +5,7 @@ from Util.normalTool.sendmail import SendMail_SMTP
 from Util.normalTool.TestSuiteInit import *
 from config.CommonConfig import *
 
-# 4. 执行用例
+# 执行用例
 if __name__ == '__main__':
     discover = create_suite()
     print ('=====AutoTest Start======')

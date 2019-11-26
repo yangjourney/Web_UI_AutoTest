@@ -13,6 +13,7 @@ class RunTests(object):
     """description of class"""
     def __init__(self):
         CreateRunFolder()
+        #MatchKeyword()
 
     def setUpKeyword(self):
         CreateLoggerFile('log')
@@ -180,4 +181,5 @@ class RunTests(object):
     def log_error(self,info):
         logging.error(str(info))
         print(str(info))
+
 

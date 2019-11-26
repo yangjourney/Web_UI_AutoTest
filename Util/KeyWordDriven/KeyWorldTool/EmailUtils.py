@@ -35,7 +35,7 @@ def SendMail_SMTP():
     # 第三方 SMTP 服务
     # 构造 MIMEMultipart 对象做为根容器
     config = configparser.ConfigParser()
-    config.read(file_path+'\\mail.conf')
+    config.read(mail_config)
     # 设置服务器
     mail_host = config.get('SMTP', 'host')
     # 构造一个MIMEMultipart对象代表邮件本身
@@ -44,7 +44,7 @@ def SendMail_SMTP():
     message.attach(MIMEText(mail_content, 'html', 'utf-8'))# 正文内容
 
     message['From'] =config.get('SMTP', 'from_addr')
-    message['To'] = ','.join(config.get('SMTP', 'to_addrs')) #收件人地址
+    message['To'] = config.get('SMTP', 'to_addrs') #收件人地址
 
     subject = '自动化测试报告' + getToday()
     message['Subject'] = subject  #邮件标题
@@ -67,7 +67,7 @@ def SendMail_SMTP():
     try:
         smtpObj = smtplib.SMTP_SSL(mail_host, 465)
         smtpObj.login(config.get('SMTP', 'from_addr'), config.get('SMTP', 'login_pwd'))
-        smtpObj.sendmail(config.get('SMTP', 'from_addr'), config.get('SMTP', 'to_addrs'), str(message))  #message.as_string()
+        smtpObj.sendmail(message['From'], message['To'], str(message))  #message.as_string()
         smtpObj.quit()
         #print (u">>>发送邮件成功！")
         #删除生成的zip文件

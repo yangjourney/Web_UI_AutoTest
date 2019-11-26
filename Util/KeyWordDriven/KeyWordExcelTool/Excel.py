@@ -123,7 +123,26 @@ class ParseExcel(object):
     def log_error(self, info):
         logging.error(str(info))
         print(str(info))
+#关键字驱动
+#测试用例页面
+case_no=0
+case_name=1
+case_describe=2
+case_detail=3
+case_NeedToDo=4
+case_usetime=5
+case_result=6
 
+#测试步骤页面
+step_no=0
+step_describe=1
+step_keyword=2
+step_method=3
+step_expression=4
+step_value=5
+step_time=6
+step_result=7
+step_err=8
 
 
 
