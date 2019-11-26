@@ -22,7 +22,7 @@ class RunTests(object):
         logging.info('******************************************************************')
         # 将测试的excel复制到testresult里面，然后在这里加上测试的结果
         oldname = keyword_excel_path
-        newname = os.path.join(ResultFolder.GetRunDirectory(), u"关键字驱动测试用例.xlsx")
+        newname = os.path.join(ResultFolder.GetRunDirectory(), u"测试报告"+ time.strftime("%Y_%m_%d_%H_%M_%S")+".xlsx")
         shutil.copyfile(oldname, newname)
         case_file = ParseExcel(newname)
         self.case_file = case_file
@@ -95,6 +95,7 @@ class RunTests(object):
         all_rows_list = list(self.case_file.get_all_rows())
         for row in all_rows_list[1:]:
             # 获取动作、定位方式、定位表达式、操作值
+            stepNeedToDo = self.getString(row[step_NeedToDo].value)
             stepNum = self.getString(row[step_no].value)
             stepDescribe = self.getString(row[step_describe].value)
             stepKeyword = self.getString(row[step_keyword].value)
@@ -103,9 +104,10 @@ class RunTests(object):
             stepValue = self.getString(row[step_value].value)
             if stepDescribe == '' or stepKeyword == '':
                 break
-            rownum = all_rows_list.index(row)
-            stepInfo = CaseStepInfo(stepNum,stepDescribe,stepKeyword,stepMethod,stepExpression,stepValue,rownum)
-            caseStepList.append(stepInfo)
+            if stepNeedToDo == 'y' or stepNeedToDo=='Y':
+                rownum = all_rows_list.index(row)
+                stepInfo = CaseStepInfo(stepNum,stepDescribe,stepKeyword,stepMethod,stepExpression,stepValue,rownum)
+                caseStepList.append(stepInfo)
         return caseStepList
 
     def executeCase(self,caseStepList):
