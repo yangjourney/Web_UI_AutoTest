@@ -26,5 +26,5 @@ def new_file():
     # 最后对lists元素，按文件修改时间大小从小到大排序。
     lists.sort(key=lambda fn:os.path.getmtime(test_result_path+'\\'+fn))
     # 获取最新文件的绝对路径
-    file_path=os.path.join(test_result_path,lists[-1])
-    return file_path
+    File_path = os.path.join(test_result_path,lists[-1])
+    return File_path
