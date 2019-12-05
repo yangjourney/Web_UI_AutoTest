@@ -13,25 +13,37 @@ def SendMail_SMTP():
     # 构造 MIMEMultipart 对象做为根容器
     config = configparser.ConfigParser()
     config.read(mail_config)
+    file = new_file()#获取指定文件
     # 设置服务器
     mail_host = config.get('SMTP', 'host')
+    #提取文本内容
+    # f = open(file,'r',encoding='UTF-8')
+    # msg = ""
+    # while True:
+    #     line = f.readline()
+    #     msg += line.strip()+'\n'
+    #     if not line:
+    #         break
+    # f.close()
     # 构造一个MIMEMultipart对象代表邮件本身
     message= MIMEMultipart()
     mail_content = '你好，这是自动化测试报告，请注意查收。<br>'+getToday()
+    #mail_content = msg
     message.attach(MIMEText(mail_content, 'html', 'utf-8'))# 正文内容
     message['From'] =config.get('SMTP', 'from_addr')
     message['To'] = config.get('SMTP', 'to_addrs') #收件人地址
-
-    subject = 'AutoUI_TestReport-%s' % time.ctime()
+    subject = 'UI自动化测试报告-%s' % time.ctime()
     message['Subject'] = subject  #邮件标题
 
+
+
     #添加文件到附件
-    file = new_file()
     with open(file,'rb') as f:
         # MIMEBase表示附件的对象
-        mime = MIMEBase('text', 'txt', filename='自动化测试报告')
+        attName = os.path.split(file)[1]
+        mime = MIMEBase('text', 'txt', filename=attName)
         # filename是显示附件名字
-        mime.add_header('Content-Disposition', 'attachment', filename='自动化测试报告')
+        mime.add_header('Content-Disposition', 'attachment', filename=attName)
         # 获取附件内容
         mime.set_payload(f.read())
         encoders.encode_base64(mime)

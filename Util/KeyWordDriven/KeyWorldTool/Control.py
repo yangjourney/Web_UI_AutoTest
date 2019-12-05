@@ -104,7 +104,9 @@ class RunTests(object):
             stepValue = self.getString(row[step_value].value)#可在此处增加判断，调用方法来实现输入信息的参数化，目前是固定值。
             if stepDescribe == '' or stepKeyword == '':
                 break
-            if stepNeedToDo == 'y' or stepNeedToDo=='Y':
+            if stepNeedToDo == 'n' or stepNeedToDo=='N':
+                continue
+            else:
                 rownum = all_rows_list.index(row)
                 stepInfo = CaseStepInfo(stepNum,stepDescribe,stepKeyword,stepMethod,stepExpression,stepValue,rownum)
                 caseStepList.append(stepInfo)

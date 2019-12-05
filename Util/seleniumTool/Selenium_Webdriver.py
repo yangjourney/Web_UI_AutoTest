@@ -40,7 +40,11 @@ class webutils(object):
         if browser == "firefox" :
             driver = webdriver.Firefox(firefoxDriverFilePath)
         elif browser == "chrome":
-            driver = webdriver.Chrome(chromeDriverFilePath)
+            option=webdriver.ChromeOptions()
+            option.add_argument('--headless')
+            option.add_argument("--disable-infobars")
+            option.add_argument("--start-maximized")
+            driver = webdriver.Chrome(chromeDriverFilePath,chrome_options=option,desired_capabilities=None)
         elif browser == "ie" :
             driver = webdriver.Ie(ieDriverFilePath)
         elif browser == "edge":
