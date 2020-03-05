@@ -9,7 +9,7 @@ logger.setLevel(logging.DEBUG)
 
 def CreateLoggerFile(filename):
     try:
-        fulllogname = ResultFolder.GetRunDirectory() + "\\" + filename + ".log"
+        fulllogname = ResultFolder.GetRunDirectory() + "//" + filename + ".log"
         fh = logging.FileHandler(filename=fulllogname, encoding='utf-8')
         fh.setLevel(logging.DEBUG)
         format_now = '%(asctime)s - %(filename)s[line:%(lineno)d] - %(levelname)s: %(message)s'

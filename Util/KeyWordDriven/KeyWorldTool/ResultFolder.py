@@ -14,8 +14,7 @@ def CreateRunFolder():
 
 def GetRunDirectory():
     lists = os.listdir(test_result_path)  # 列出目录的下所有文件和文件夹保存到lists
-    lists.sort(key=lambda fn: os.path.getmtime(test_result_path + "\\" + fn))  # 按创建时间排序
+    lists.sort(key=lambda fn: os.path.getmtime(test_result_path + "//" + fn))  # 按创建时间排序
     file_new = os.path.join(test_result_path, lists[-1])  # 获取最新的文件保存到file_new
     #print (lists[-1])
     return file_new
-

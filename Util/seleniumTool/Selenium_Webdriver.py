@@ -9,7 +9,7 @@ CurrentFile = os.path.abspath(os.path.dirname(__file__))
 BASE_DIR=os.path.abspath(os.path.dirname(CurrentFile)+os.path.sep+".")
 """
 import xlrd,datetime,time,pyperclip
-from pykeyboard import PyKeyboard
+#from pykeyboard import PyKeyboard
 from selenium import webdriver
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.support import expected_conditions as EC
@@ -342,7 +342,7 @@ class webutils(object):
         self.find_element(element).click()
         pyperclip.copy(os.path.join(project_path,'DataResourse\\img\\'+file))
         time.sleep(2)
-        k = PyKeyboard()
+        k = pyperclip.paste()
         #SendKeys(str(pyperclip.paste()))
         k.tab_key(k.enter_key)
         #SendKeys("{ENTER}")

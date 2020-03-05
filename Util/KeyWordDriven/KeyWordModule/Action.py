@@ -4,10 +4,11 @@ from config.CommonConfig import *
 from Util.KeyWordDriven.KeyWorldTool.FormatTime import *
 from selenium.webdriver.support.ui import WebDriverWait
 from Util.KeyWordDriven.KeyWorldTool import ResultFolder
-from Util.KeyWordDriven.KeyWorldTool.Clipboard import *
-from Util.KeyWordDriven.KeyWorldTool.KeyBoardUtil import *
+#from Util.KeyWordDriven.KeyWorldTool.Clipboard import *
+from selenium.webdriver.common.keys import Keys
+#from Util.KeyWordDriven.KeyWorldTool.KeyBoardUtil import *
 import time
-import logging
+import logging,pyperclip
 
 driver=None
 #打开浏览器操作
@@ -23,12 +24,15 @@ def open_browser(browsername='chrome',*args):
             option.add_argument('--headless')
             option.add_argument("--disable-infobars")
             option.add_argument("--start-maximized")
+            option.add_argument("--no-sandbox")
             driver=webdriver.Chrome(executable_path=chromeDriverFilePath,chrome_options=option,desired_capabilities=None)
             #driver.maximize_window()
         elif browsername.lower()=='firefox':
+            # option = webdriver.firefox.options.Options()
             option=webdriver.FirefoxOptions()
-            option.add_argument('--disable-gpu')
-            option.add_argument("--no-sandbox")
+            option.add_argument('--headless')
+            # option.add_argument('--disable-gpu')
+            # option.add_argument("--no-sandbox")
             driver=webdriver.Firefox(executable_path=firefoxDriverFilePath,firefox_options=option)
             #driver.maximize_window()
         elif browsername.lower()=='edge':
@@ -230,23 +234,25 @@ def log_error(info):
 
 # 模拟ctrl+v键
 def ctrl_v(value):
+    global driver
     try:
-        Clipboard.set_text(value)
-        time.sleep(2)
-        KeyBoardKeys.two_keys('ctrl', 'v')
+        #Clipboard.set_text(value)
+        driver.sendKeys(Keys.CONTROL,"v")
     except Exception as e:
         raise e
 
 # 模拟tab键
 def tab_key():
+    global driver
     try:
-        KeyBoardKeys.one_key('tab')
+        driver.sendKeys(Keys.TAB)
     except Exception as e:
         raise e
 
 # 模拟enter键
 def enter_key():
+    global driver
     try:
-        KeyBoardKeys.one_key('enter')
+        driver.sendKeys(Keys.ENTER)
     except Exception as e:
         raise e
