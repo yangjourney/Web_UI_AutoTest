@@ -8,6 +8,8 @@ from Util.KeyWordDriven.KeyWordDic.Keyword import *
 from Util.KeyWordDriven.KeyWorldTool.LogUtility import *
 from Util.KeyWordDriven.KeyWorldTool.EmailUtils import *
 import shutil
+import random
+import string
 
 class RunTests(object):
     """description of class"""
@@ -102,6 +104,11 @@ class RunTests(object):
             stepMethod = self.getString(row[step_method].value)
             stepExpression = self.getString(row[step_expression].value)
             stepValue = self.getString(row[step_value].value)#可在此处增加判断，调用方法来实现输入信息的参数化，目前是固定值。
+            if stepValue == 'random':
+                stepValue = ''.join(random.sample(string.ascii_letters + string.digits,8))
+            else:
+                stepValue = self.getString(row[step_value].value)
+
             if stepDescribe == '' or stepKeyword == '':
                 break
             if stepNeedToDo == 'n' or stepNeedToDo=='N':
@@ -169,12 +176,28 @@ class RunTests(object):
             Action.input_select_click(step.method, step.expression, step.value)
         elif step.keyword == out_frame:
             Action.out_frame()
-        elif step.keyword == ctrl_v:
-            Action.ctrl_v(step.value)
-        elif step.keyword == tab_key:
-            Action.tab_key()
-        elif step.keyword == enter_key:
-            Action.enter_key()
+        # elif step.keyword == ctrl_v:
+        #     Action.ctrl_v(step.value)
+        # elif step.keyword == tab_key:
+        #     Action.tab_key()
+        # elif step.keyword == enter_key:
+        #     Action.enter_key()
+        elif step.keyword == js:
+            Action.js(step.method,step.expression,step.value)
+        elif step.keyword == move_to_gap:
+            Action.move_to_gap(step.method,step.expression,step.value)
+        elif step.keyword == keyboard_down:
+            Action.keyboard_down(step.method,step.expression)
+        elif step.keyword == keyboard_right:
+            Action.keyboard_right(step.method,step.expression)
+        elif step.keyword == keyboard_enter:
+            Action.keyboard_enter(step.method,step.expression)
+        elif step.keyword == keyboard_tab:
+            Action.keyboard_tab(step.method,step.expression)
+        # elif step.keyword == keyboard_scrollbar:
+        #     Action.keyboard_scrollbar(step.method,step.expression)
+        elif step.keyword == double_click:
+            Action.double_click(step.method,step.expression)
         else:
             self.log_info("非法关键字：" + step.keyword)
 
