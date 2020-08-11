@@ -4,7 +4,7 @@ from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 from email import encoders
 from email.mime.base import MIMEBase
-import win32com.client as win32
+# import win32.client as win32
 from Util.normalTool.TestSuiteInit import *
 from Util.KeyWordDriven.KeyWorldTool.EmailUtils import *
 
@@ -59,19 +59,19 @@ def SendMail_SMTP():
     except smtplib.SMTPException as e:
         print (e)
 
-def SendMail_OutLook(mail_config_file,file):
-    # 构造 MIMEMultipart 对象做为根容器
-    config = configparser.ConfigParser()
-    config.read(mail_config_file)
-    olook = win32.Dispatch("outlook.Application")#固定写法
-    mail = olook.CreateItem(win32.constants.olMailItem)#固定写法
-    mail.To = config.get('SMTP', 'to_addrs')#收件人
-    # mail.Recipients.Add(addressee)
-    mail.Subject = 'AutoUI_TestReport-%s' % time.ctime() #邮件主题
-    mail.Attachments.Add(file, 1, 1, "myFile")
-    read = open(file, encoding='utf-8')#打开需要发送的测试报告附件文件
-    content = read.read()#读取测试报告文件中的内容
-    read.close()
-    mail.Body = content#将从报告中读取的内容，作为邮件正文中的内容
-    mail.Send()#发送
+# def SendMail_OutLook(mail_config_file,file):
+#     # 构造 MIMEMultipart 对象做为根容器
+#     config = configparser.ConfigParser()
+#     config.read(mail_config_file)
+#     olook = win32.Dispatch("outlook.Application")#固定写法
+#     mail = olook.CreateItem(win32.constants.olMailItem)#固定写法
+#     mail.To = config.get('SMTP', 'to_addrs')#收件人
+#     # mail.Recipients.Add(addressee)
+#     mail.Subject = 'AutoUI_TestReport-%s' % time.ctime() #邮件主题
+#     mail.Attachments.Add(file, 1, 1, "myFile")
+#     read = open(file, encoding='utf-8')#打开需要发送的测试报告附件文件
+#     content = read.read()#读取测试报告文件中的内容
+#     read.close()
+#     mail.Body = content#将从报告中读取的内容，作为邮件正文中的内容
+#     mail.Send()#发送
 
